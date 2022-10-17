@@ -21,10 +21,10 @@ BigQuery Table called "resources" - starting schema\
     Command: `bq mk --schema messages:STRING -t activities.resources`
 
 PubSub Topic called "activities"\
-    Command: gcloud pubsub topic create activities
+    Command: `gcloud pubsub topic create activities`
 
 PubSub Subscription called "activites-catchall"\
-    Command : gcloud pubsub subscriptions create activites-catchall --topic projects/PROJECTID/topics/activities
+    Command : `gcloud pubsub subscriptions create activites-catchall --topic projects/PROJECTID/topics/activities`
 
 Create a Cloud Function
     Python 3.9
@@ -34,17 +34,17 @@ Create a Cloud Function
 ## Google Asset Managment examples
 
 Enabling the APIs\
-    Command: gcloud services enable cloudasset.googleapis.com
-    Command: gcloud services enable cloudresourcemanager.googleapis.com
-    Command: gcloud sercies list
+    Command: `gcloud services enable cloudasset.googleapis.com`
+    Command: `gcloud services enable cloudresourcemanager.googleapis.com`
+    Command: `gcloud sercies list`
 
 Asset Export to BigQuery Example\
-gcloud asset export --project PROJECTID --bigquery-table export --bigquery-dataset activities
+    Command: `gcloud asset export --project PROJECTID --bigquery-table export --bigquery-dataset activities`
 
 Asset Feed Creation\
-gcloud asset feeds create activities --project=PROJECTID \
+    Command: `gcloud asset feeds create activities --project=PROJECTID \
 	--content-type=resource --asset-types="compute.googleapis.com.*" \
-	--pubsub-topic=projects/PROJECTID/topics/activities 
+	--pubsub-topic=projects/PROJECTID/topics/activities`
 
 
 
