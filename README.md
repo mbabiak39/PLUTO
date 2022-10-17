@@ -1,4 +1,4 @@
-# PLUTO Demonstration
+# PLUTO Demonstration Code
 Project Logistics, UTilization and Operations (PLUTO)
  
 ## Clone in the Repo
