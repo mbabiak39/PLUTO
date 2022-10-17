@@ -21,7 +21,7 @@ BigQuery Table called "resources" - starting schema\
     Command: `bq mk --schema messages:STRING -t activities.resources`
 
 PubSub Topic called "activities"\
-    Command: `gcloud pubsub topic create activities`
+    Command: `gcloud pubsub topics create activities`
 
 PubSub Subscription called "activites-catchall"\
     Command : `gcloud pubsub subscriptions create activites-catchall --topic projects/PROJECTID/topics/activities`
