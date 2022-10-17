@@ -34,9 +34,9 @@ Create a Cloud Function
 ## Google Asset Managment examples
 
 Enabling the APIs\
-    Command: `gcloud services enable cloudasset.googleapis.com`
-    Command: `gcloud services enable cloudresourcemanager.googleapis.com`
-    Command: `gcloud sercies list`
+    Command: `gcloud services enable cloudasset.googleapis.com`\
+    Command: `gcloud services enable cloudresourcemanager.googleapis.com`\
+    Command: `gcloud sercies list`\
 
 Asset Export to BigQuery Example\
     Command: `gcloud asset export --project PROJECTID --bigquery-table export --bigquery-dataset activities`
