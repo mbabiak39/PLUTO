@@ -7,7 +7,7 @@ Clone in the `https://github.com/ROIGCP/PLUTO` repo\
     Command: `git clone https://github.com/ROIGCP/PLUTO`\
     Command: `cd PLUTO`
 
-## GETTING MARS WORKING IN CLOUDSHELL
+## GETTING PLUTO WORKING
 Make sure you have a project set\
     Command: `gcloud config set project YOURPROJECTNAME`
 
@@ -19,3 +19,8 @@ BigQuery Dataset called "activities"\
 
 BigQuery Table called "resources" - starting schema\
     Command: `bq mk --schema messages:STRING -t activities.resources`
+    
+Create a Cloud Function
+    Python 3.9
+    Trigger by Pub/Sub Message
+    Use the sample in CloudFunction folder
