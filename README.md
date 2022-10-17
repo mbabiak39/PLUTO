@@ -7,7 +7,7 @@ Clone in the `https://github.com/ROIGCP/PLUTO` repo\
     Command: `git clone https://github.com/ROIGCP/PLUTO`\
     Command: `cd PLUTO`
 
-## GETTING PLUTO WORKING
+## PLUTO dependancies
 Make sure you have a project set\
     Command: `gcloud config set project YOURPROJECTNAME`
 
@@ -19,8 +19,34 @@ BigQuery Dataset called "activities"\
 
 BigQuery Table called "resources" - starting schema\
     Command: `bq mk --schema messages:STRING -t activities.resources`
-    
+
+PubSub Topic called "activities"\
+    Command: gcloud pubsub topic create activities
+
+PubSub Subscription called "activites-catchall"\
+    Command : gcloud pubsub subscriptions create activites-catchall --topic projects/PROJECTID/topics/activities
+
 Create a Cloud Function
     Python 3.9
-    Trigger by Pub/Sub Message
+    Trigger by topic activities
     Use the sample in CloudFunction folder
+
+## Google Asset Managment examples
+
+Enabling the APIs\
+    Command: gcloud services enable cloudasset.googleapis.com
+    Command: gcloud services enable cloudresourcemanager.googleapis.com
+    Command: gcloud sercies list
+
+Asset Export to BigQuery Example\
+gcloud asset export --project PROJECTID --bigquery-table export --bigquery-dataset activities
+
+Asset Feed Creation\
+gcloud asset feeds create activities --project=PROJECTID \
+	--content-type=resource --asset-types="compute.googleapis.com.*" \
+	--pubsub-topic=projects/PROJECTID/topics/activities 
+
+
+
+
+
