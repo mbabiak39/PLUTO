@@ -1,7 +1,7 @@
 resource "google_cloudfunctions_function" "function" {      
   project             = var.project_id
   name                = var.function
-  available_memory_mb = 128
+  available_memory_mb = 256
   runtime             = "python39"
   source_repository {
     url = "https://source.developers.google.com/projects/moonbank-pluto/repos/plutopubsubtobq/moveable-aliases/master/paths/"
