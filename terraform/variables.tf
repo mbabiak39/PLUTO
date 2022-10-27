@@ -1,5 +1,5 @@
 variable "project_id" {
-  default = "moonbank-pluto-prod"
+  default = "REPLACEWITHPROJECTID"
   type    = string
 }
 
@@ -7,6 +7,7 @@ variable "region" {
   default = "us-central1"
   type    = string
 }
+
 variable "topic" {
   default = "activities"
   type    = string
@@ -44,7 +45,9 @@ variable "service_list" {
       "cloudbuild.googleapis.com",
       "cloudfunctions.googleapis.com",
       "containerregistry.googleapis.com",
+      "cloudresourcemanager.googleapis.com",
       "iam.googleapis.com",
+      "pubsub.googleapis.com",
       "sourcerepo.googleapis.com",
     ]
 }
