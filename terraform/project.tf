@@ -10,7 +10,7 @@ resource "google_project_service" "gcp_services_enable" {
   project = var.project_id
   for_each = toset(var.service_list)
   service = each.key
-  disable_on_destroy = true
+  disable_on_destroy = false
 }
 
 resource "google_project_service" "gcp_services_enable_default" {
