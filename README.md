@@ -26,9 +26,9 @@ PubSub Topic called "activities"\
 PubSub Subscription called "activites-catchall"\
     Command : `gcloud pubsub subscriptions create activites-catchall --topic projects/PROJECTID/topics/activities`
 
-Create a Cloud Function
-    Python 3.9
-    Trigger by topic activities
+Create a Cloud Function\
+    Python \
+    Trigger by topic activities \
     Use the sample in CloudFunction folder
 
 ## Google Asset Managment examples
