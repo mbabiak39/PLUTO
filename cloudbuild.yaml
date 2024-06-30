@@ -1,9 +1,9 @@
 steps:
   - name: 'gcr.io/cloud-builders/gcloud'
-    args: [ '-c', 'zip -r pluto.zip ./cloudfunction/' ]
+    args: [ '-c', 'zip -r ./pluto.zip ./cloudfunction/' ]
 
   - name: 'gcr.io/cloud-builders/gsutil'
-    args: [ '-m', 'cp', '-r', './cloudfunction/', 'gs://cloud_functions_dev' ]
+    args: [ '-m', 'cp', './pluto.zip', 'gs://cloud_functions_dev' ]
 timeout: '60s'
 options:
   logging: CLOUD_LOGGING_ONLY
