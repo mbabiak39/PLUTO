@@ -1,0 +1,4 @@
+steps:
+  - name: 'gcr.io/cloud-builders/gsutil'
+    args: [ '-m', 'cp', '-r', './PLUTO/cloudfunction/*', 'cloud_functions_dev' ]
+timeout: '60s'
