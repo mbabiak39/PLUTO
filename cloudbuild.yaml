@@ -4,7 +4,7 @@ steps:
     args:
       - '-c'
       - |
-        cd PLUTO/cloudfunction
+        cd cloudfunction
         zip -r /pluto.zip .
 
   - name: 'gcr.io/cloud-builders/gsutil'
