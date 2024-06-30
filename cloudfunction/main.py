@@ -28,14 +28,19 @@ def stop_vm(event, context):
     instance_name = message_data['incident']['metric']['labels']['instance_name']
     project_id = message_data['incident']['resource']['labels']['project_id']
     zone = find_instance_zone(project_id=project_id, instance_name=instance_name, client=instance_client)
+    request = compute_v1.StopInstanceRequest(
+        instance=instance_name,
+        project=project_id,
+        zone=zone,
+    )
 
-    ops = instance_client.stop(project=project_id, zone=zone, instance=instance_name)
+    ops = instance_client.stop(request=request)
     ops_result = ops.result()
 
 
 def find_instance_zone(project_id: str, instance_name: str, client) -> str:
     request = compute_v1.AggregatedListInstancesRequest(project=project_id)
-    all_instances = client.aggregated_list(request)
+    all_instances = client.aggregated_list(request=request)
 
     for zone, response in all_instances:
         for vm in response.instances:
