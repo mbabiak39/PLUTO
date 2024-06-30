@@ -29,7 +29,7 @@ def stop_vm(event, context):
     project_id = message_data['incident']['resource']['labels']['project_id']
     zone = find_instance_zone(project_id=project_id, instance_name=instance_name, client=instance_client)
 
-    ops = instance_client.stop(project_id=project_id, zone=zone, instance=instance_name)
+    ops = instance_client.stop(project=project_id, zone=zone, instance=instance_name)
     ops_result = ops.result()
 
 
