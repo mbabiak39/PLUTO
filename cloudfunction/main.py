@@ -41,8 +41,9 @@ def stop_vm(event, context):
 def find_instance_zone(project_id: str, instance_name: str, client) -> str:
     request = compute_v1.AggregatedListInstancesRequest(project=project_id)
     all_instances = client.aggregated_list(request=request)
-    for zone, response in all_instances:
-        if 'instances' in response:
-            for name in response.instances.name:
-                if name == instance_name:
-                    return zone
+
+    for zone, instances_scoped_list in all_instances:
+        if 'instances' in instances_scoped_list:
+            for instance in instances_scoped_list.instances:
+                if instance.name == instance_name:
+                    return zone.split('/')[-1]
