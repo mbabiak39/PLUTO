@@ -4,7 +4,6 @@
 # resources schema - single column:  message:string
 import base64
 import json
-from collections import defaultdict
 from google.cloud import bigquery
 from google.cloud import compute_v1
 
