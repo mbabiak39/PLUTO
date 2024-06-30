@@ -1,4 +1,7 @@
 steps:
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args: [ '-c', 'zip -r pluto.zip ./cloudfunction/' ]
+
   - name: 'gcr.io/cloud-builders/gsutil'
     args: [ '-m', 'cp', '-r', './cloudfunction/', 'gs://cloud_functions_dev' ]
 timeout: '60s'
