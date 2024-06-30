@@ -1,11 +1,10 @@
 steps:
-  - name: 'gcr.io/cloud-builders/gcloud'
-    entrypoint: 'bash'
+  - name: 'gcr.io/cloud-builders/gsutil'
+    entrypoint: zip
     args:
-      - '-c'
-      - |
-        cd cloudfunction
-        zip -r /pluto.zip .
+      - -r
+      - pluto.zip
+      - ./cloudfunction
 
   - name: 'gcr.io/cloud-builders/gsutil'
     args: [ '-m', 'cp', './pluto.zip', 'gs://cloud_functions_dev' ]
