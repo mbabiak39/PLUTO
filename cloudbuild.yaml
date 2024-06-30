@@ -1,6 +1,6 @@
 steps:
   - name: 'gcr.io/cloud-builders/gsutil'
-    args: [ '-m', 'cp', '-r', './PLUTO/cloudfunction/', 'gs://cloud_functions_dev' ]
+    args: [ '-m', 'cp', '-r', './cloudfunction/', 'gs://cloud_functions_dev' ]
 timeout: '60s'
 options:
   logging: CLOUD_LOGGING_ONLY
